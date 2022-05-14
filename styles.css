@@ -1,0 +1,265 @@
+:root {
+  --background-gradient: linear-gradient(0deg, rgba(100,98,231,1) 0%, rgba(175,104,234,1) 100%);
+  --very-dark-blue: hsl(238, 29%, 16%);
+  --soft-red:hsl(14, 88%, 65%);
+  --dark-gray: hsl(237, 12%, 33%);
+  --medium-gray: hsl(240, 6%, 50%);
+  --light-gray:hsl(240, 5%, 91%);
+  --font-size: .8rem;
+  --ff:'Kumbh Sans', sans-serif;
+  --font-normal: 400;
+  --font-bold: 700;
+  --margin-spacing: 3rem;
+  --padding-spacing: 2rem;
+  --fixed-width:;
+}
+
+/* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background-gradient);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-family: var(--ff);
+  line-height: 1.5;
+  font-size: var(--font-size);
+  height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+
+/* Mobile */
+.primary-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+}
+
+.card-wrapper {
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  margin-top: 15vh;
+  margin-bottom: 4rem;
+}
+
+.image-container {
+  background-image: url(./images/illustration-woman-online-mobile.svg), url(./images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, 100%;
+  background-position: top center, bottom;
+  margin-top: -6.5rem;
+  width: 15rem;
+  height: 15rem;
+}
+
+.box-img {
+  display: none;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-container {
+  color: var(--very-dark-blue);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.questions-container {
+  margin: .5rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 19rem;
+}
+
+.question {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.question:nth-child(5) {
+  border-bottom: none;
+}
+
+.question-btn {
+  cursor: pointer;
+  display: flex;
+  border: none;
+  background-color: transparent;
+}
+
+.title,
+.icon {
+  flex: 1;
+}
+
+.title {
+  display: flex;
+  justify-self: left;
+  flex-basis: 95%;
+  color: var(--medium-gray);
+  font-weight: 700;
+  margin: 1rem 1rem 1rem 0;
+
+}
+
+.title:hover {
+  color: var(--soft-red);
+}
+
+.icon {
+  align-self: center;
+  transition: all 0.3s linear;
+}
+
+.question-answer {
+  color: var(--medium-gray);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.woman-online,
+.box-img {
+  display: none;
+}
+
+/* footer */
+.attribution {
+  font-size: .8rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: #fff;
+}
+
+/* hide text */
+.question-answer {
+  display: none;
+}
+
+.show-text .question-answer {
+  display: block;
+
+}
+
+.show-text .title {
+  color: var(--very-dark-blue);
+}
+
+.show-text .icon-animation {
+  transform: rotate(-180deg);
+}
+
+.icon-hide {
+  display: none;
+}
+
+.show-text .icon-hide {
+  display: inline;
+}
+
+.show-text 
+.icon-show {
+  display: none;
+}
+
+
+/* Desktop */
+@media(min-width: 50em) {
+
+  .card-wrapper {
+    width: 50rem;
+
+  }
+
+  .card {
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: -18% center;
+    flex-direction: row;
+    position: relative;
+    padding-right: 2rem;
+    justify-content: space-between;
+  }
+
+  .content-wrapper {
+    align-items: normal;
+    padding: 1.6rem;
+  }
+
+  .image-container {
+    background-size: 0;
+    overflow: hidden;
+    width: 50%;
+    height: 100%;
+    padding-top: 6rem;
+  }
+
+  .image-container,
+  .content-wrapper {
+    flex: 1;
+  }
+
+  .woman-online,
+  .box-img {
+    display: block;
+  }
+
+  .woman-online {
+    width: 100%;
+    height: auto;
+    max-width: 25rem;
+    transform: translateX(-4rem);
+  }
+
+  .box-img {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    transform: translateX(-50%);
+    width: 20%;
+    z-index: 1;
+  }
+
+  .title-container {
+    align-self: flex-start;
+    margin-left: 1.6rem;
+  }
+}
